@@ -1,0 +1,11 @@
+﻿@model CRUD_WebAPI.Models.UserInfo
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h2>@Model.UserName</h2>
+<form action="/Home/index" method="post">
+    <input type="text" name="UserName"/>
+    <input type="submit" value="Submit Name"/>
+</form>
