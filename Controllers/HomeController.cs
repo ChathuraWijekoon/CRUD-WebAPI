@@ -47,6 +47,27 @@ namespace CRUD_WebAPI.Controllers
             return View(UI);
         }
 
+        [HttpPost]
+        public IActionResult UpdateUserInfo(UserInfo UI)
+        {
+            SqlConnection mainConn = new SqlConnection(dbConnectionString);
+            mainConn.Open();
+            SqlCommand updateCmd = new SqlCommand("update UserInfoCRUDADO set UserName = '"+UI.NewUserName+"' where UserName = '"+UI.UserName+"'", mainConn);
+            updateCmd.ExecuteNonQuery();
+            mainConn.Close();
+            return View(UI);
+        }
+
+        [HttpPost]
+        public IActionResult DeleteUserInfo(UserInfo UI)
+        {
+            SqlConnection mainConn = new SqlConnection(dbConnectionString);
+            mainConn.Open();
+            SqlCommand deleteCmd = new SqlCommand("delete from UserInfoCRUDADO where UserName = '"+UI.UserName+"'", mainConn);
+            deleteCmd.ExecuteNonQuery();
+            mainConn.Close();
+            return View(UI);
+        }
         public IActionResult Privacy()
         {
             return View();

@@ -9,3 +9,14 @@
     <input type="text" name="UserName"/>
     <input type="submit" value="Submit Name"/>
 </form>
+
+<form action="/Home/UpdateUserInfo" method="post">
+    <input type="text" name="UserName" placeholder="Old UserName"/>
+    <input type="text" name="NewUserName" placeholder="New UserName"/>
+    <input type="submit" value="Submit Name"/>
+</form>
+
+<form action="/Home/DeleteUserInfo" method="post">
+    <input type="text" name="UserName" placeholder="Old UserName"/>
+    <input type="submit" value="Delete Name"/>
+</form>
